@@ -1,0 +1,39 @@
+body {
+  padding-top: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
+  background-color: darkgray;
+}
+#input {
+  width: 150px;
+  height: 30px;
+}
+
+span {
+  font-size: 18px;
+}
+
+#input {
+  border-color: rgb(80, 80, 176);
+}
+
+#found {
+  border-color: rgb(186, 47, 58);
+  background-color: rgb(211, 116, 119);
+  height: 35px;
+}
+
+#clear {
+  border-color: rgb(112, 114, 227);
+  background-color: rgb(154, 154, 232);
+  height: 35px;
+}
+
+#cm {
+  font-size: 30px;
+}
+
+#changeMe {
+  font-size: 40px;
+  color: rgb(187, 18, 44);
+}
