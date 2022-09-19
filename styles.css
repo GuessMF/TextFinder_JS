@@ -2,11 +2,14 @@ body {
   padding-top: 5%;
   padding-left: 5%;
   padding-right: 5%;
-  background-color: darkgray;
+  background-color: rgba(165, 165, 134, 0.582);
+  width: auto;
 }
 #input {
   width: 150px;
   height: 30px;
+  border-radius: 3px;
+  border: none;
 }
 
 span {
@@ -14,19 +17,24 @@ span {
 }
 
 #input {
-  border-color: rgb(80, 80, 176);
+  border-color: rgb(72, 72, 215);
+  width: 100px;
 }
 
 #found {
-  border-color: rgb(186, 47, 58);
-  background-color: rgb(211, 116, 119);
+  border: none;
+  border-radius: 3px;
+  background-color: rgb(209, 87, 91);
   height: 35px;
+  width: 60px;
 }
 
 #clear {
-  border-color: rgb(112, 114, 227);
-  background-color: rgb(154, 154, 232);
+  border: none;
+  border-radius: 3px;
+  background-color: rgb(121, 121, 232);
   height: 35px;
+  width: 90px;
 }
 
 #cm {
@@ -36,4 +44,22 @@ span {
 #changeMe {
   font-size: 40px;
   color: rgb(187, 18, 44);
+}
+
+@media screen and (max-width: 430px) {
+  #cm {
+    font-size: 25px;
+  }
+  #changeMe {
+    font-size: 35px;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  #cm {
+    font-size: 22px;
+  }
+  #changeMe {
+    font-size: 30px;
+  }
 }
