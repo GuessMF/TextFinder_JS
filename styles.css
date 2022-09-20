@@ -1,9 +1,15 @@
+html {
+  height: 100%;
+}
 body {
   padding-top: 5%;
   padding-left: 5%;
   padding-right: 5%;
   background-color: rgba(165, 165, 134, 0.582);
   width: auto;
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
 #input {
   width: 150px;
@@ -54,6 +60,16 @@ span {
     font-size: 35px;
   }
 }
+.footer {
+  bottom: 0;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.githubLogo {
+  width: 50px;
+  height: 50px;
+}
 
 @media screen and (max-width: 370px) {
   #cm {
@@ -61,5 +77,13 @@ span {
   }
   #changeMe {
     font-size: 30px;
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  select:focus,
+  textarea:focus,
+  input:focus {
+    font-size: 16px;
   }
 }
