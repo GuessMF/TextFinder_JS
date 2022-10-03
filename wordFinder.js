@@ -10,28 +10,21 @@ found.addEventListener("click", () => {
 });
 
 input.addEventListener("click", () => {
-  stat == true ? newPage() : console.log("no");
+  stat == true ? newPage() : console.log("");
 });
 
 function newCheck() {
-  massives = [];
-  spansLength = document.getElementsByTagName("span").length; // колличество спанов в документе
-  words = []; //для отслеживания колличества изменений
-  for (i = 1; i < spansLength + 1; i++) {
-    body = document.getElementById(i); //все имеющиеся спаны (в скобках айди)
-    mass = body.innerHTML.split(""); // посимвольное добавление в массив каждого спана
-    massives.push(mass);
-    for (i = 0; i < massives.length; i++) {
-      for (n = 0; n < massives[i].length; n++) {
-        if (massives[i][n] == input.value) {
-          massives[i][n] = "<font color=red>" + massives[i][n] + "</font>"; //добавление цвета
-          body.innerHTML = mass.join(""); // новая html с измененным цветом
-          words.push(massives[i][n]); // добавление в массив измененных символов
-        }
-      }
+  changed = []; //для отслеживания колличества изменений
+  content = document.getElementById("content");
+  mass = content.innerHTML.split("");
+  for (n = 0; n < mass.length; n++) {
+    if (mass[n] == input.value) {
+      mass[n] = "<font color=red>" + mass[n] + "</font>"; //добавление цвета
+      content.innerHTML = mass.join(""); // новая html с измененным цветом
+      changed.push(mass[n]); // добавление в массив измененных символов
     }
   }
-  changeMe.innerHTML = words.length;
+  changeMe.innerHTML = changed.length;
   stat = true;
   input.value = "";
 }
