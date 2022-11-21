@@ -28,3 +28,4 @@ function newCheck() {
   stat = true;
   input.value = "";
 }
+// hello
