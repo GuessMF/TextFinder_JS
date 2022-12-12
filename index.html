@@ -10,8 +10,14 @@
   <body>
     <div id="box" class="box">
       <div class="topBox">
-        <input class="urlInput" type="text" placeholder="введите " />
-        <button class="poisk">POISK</button>
+        <input
+          id="url"
+          class="urlInput"
+          type="text"
+          placeholder="Введите URL "
+          autofocus
+        />
+        <button id="urlSearchButt" class="poisk">POISK</button>
       </div>
       <div class="bottomBox">
         <input
@@ -21,7 +27,6 @@
           value=""
           maxlength="1"
           minlength="1"
-          autofocus
         />
 
         <input id="found" type="submit" value="Поиск" />
@@ -35,7 +40,7 @@
 
     <div id="content">
       <!-- <a class="linka" href="https://ru.wikipedia.org/?l=">www</a> -->
-      <div class="founted"></div>
+      <!-- <div class="founted"></div> -->
       <!-- Формула-1 (англ. Formula One, Formula 1) — ааа чемпионат мира по кольцевым
       гонкам, который проводится ежегодно и состоит из этапов (называемых
       Гран-при), ааа в соответствии с техническими нормами, требованиями и

@@ -28,41 +28,22 @@ function newCheck() {
   stat = true;
   input.value = "";
 }
-
-let url = document.querySelector(".urlInput");
-let tess = document.querySelector(".founted");
-let poiskButt = document.querySelector(".poisk");
-
-function one() {}
-
-poiskButt.addEventListener("click", () => {
+// Работает только с Allow CORS: Access-Control-Allow-Origin
+urlSearchButt.addEventListener("click", () => {
+  loadStat = false; //Статус загрузки страницы
   fetch(url.value)
     .then((resp) => {
-      return resp.text();
+      if (resp.status === 200) {
+        loadStat = true; //Придание статусу Тру
+        return resp.text(); // Возвращаем текст страницы
+      }
     })
     .then((resBody) => {
-      content.innerHTML = resBody;
-      DIV = resBody;
-      console.log(DIV);
+      if (loadStat === true) {
+        content.innerHTML = resBody; // Меняет свой текст на загруженный
+        DIV = resBody; // Сохраняем в исходник загруженные текст без измененных букв
+      } else {
+        alert("Введите корректную ссылку");
+      }
     });
 });
-
-// poiskButt.addEventListener(
-//   "click",
-//   () => {
-//     let http = new XMLHttpRequest();
-//     http.open("GET", url.value);
-//     http.onreadystatechange = function () {
-//       if (this.readyState == 2) {
-//         input.disabled = true;
-//       }
-//       if (this.readyState == 4 && this.status == 200) {
-//         content.innerHTML = this.response;
-//         input.disabled = false;
-//         console.log(tess);
-//       }
-//     };
-//     http.send(null);
-//   },
-//   false
-// );

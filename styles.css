@@ -14,15 +14,37 @@ body {
 #box {
   background-color: rgba(165, 165, 134, 0.582);
   display: inline-flex;
-  padding: 50px;
-  flex-direction: unset;
+  padding: 20px;
+  flex-direction: column;
 }
-#input {
+
+.topBox {
+  width: auto;
+}
+.topBox input {
+  width: 215px;
+  height: 30px;
+  border-radius: 3px;
+  border: none;
+}
+.topBox button {
+  height: 32px;
+}
+.bottomBox {
+  margin-top: 5px;
+}
+.bottomBox input {
   width: 150px;
   height: 30px;
   border-radius: 3px;
   border: none;
 }
+/* #input {
+  width: 150px;
+  height: 30px;
+  border-radius: 3px;
+  border: none;
+} */
 .urlInput {
   border: none;
   border-radius: 3px;
@@ -42,10 +64,10 @@ span {
   font-size: 18px;
 }
 
-#input {
+/* #input {
   border-color: rgb(72, 72, 215);
   width: 100px;
-}
+} */
 
 #found {
   border: none;
