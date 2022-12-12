@@ -1,4 +1,4 @@
-const DIV = content.innerHTML;
+let DIV = content.innerHTML;
 stat = false;
 
 newPage = () => {
@@ -28,82 +28,41 @@ function newCheck() {
   stat = true;
   input.value = "";
 }
-// let url = new URL("https://ru.wikipedia.org/?l=");
-// console.log(url.body.innerHTML);
 
-// poisk = document.querySelector(".poisk");
+let url = document.querySelector(".urlInput");
+let tess = document.querySelector(".founted");
+let poiskButt = document.querySelector(".poisk");
 
-// poisk.addEventListener("click", () => {
-//   console.log("poisk click");
-// });
+function one() {}
 
-// linka = document.querySelector(".linka");
+poiskButt.addEventListener("click", () => {
+  fetch(url.value)
+    .then((resp) => {
+      return resp.text();
+    })
+    .then((resBody) => {
+      content.innerHTML = resBody;
+      DIV = resBody;
+      console.log(DIV);
+    });
+});
 
-// console.log(linka);
-
-// function makeRequest(url) {
-//   var httpRequest = false;
-
-//   if (window.XMLHttpRequest) {
-//     // Mozilla, Safari, ...
-//     httpRequest = new XMLHttpRequest();
-//     if (httpRequest.overrideMimeType) {
-//       httpRequest.overrideMimeType("text/xml");
-//       // Читайте ниже об этой строке
-//     }
-//   } else if (window.ActiveXObject) {
-//     // IE
-//     try {
-//       httpRequest = new ActiveXObject("Msxml2.XMLHTTP");
-//     } catch (e) {
-//       try {
-//         httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
-//       } catch (e) {}
-//     }
-//   }
-
-//   if (!httpRequest) {
-//     alert("Не вышло :( Невозможно создать экземпляр класса XMLHTTP ");
-//     return false;
-//   }
-//   httpRequest.onreadystatechange = function () {
-//     alertContents(httpRequest);
-//   };
-//   httpRequest.open("GET", url, true);
-//   httpRequest.send(null);
-// }
-
-// function alertContents(httpRequest) {
-//   if (httpRequest.readyState == 4) {
-//     if (httpRequest.status == 200) {
-//       alert(httpRequest.responseText);
-//     } else {
-//       alert("С запросом возникла проблема.");
-//     }
-//   }
-// }
-
-function makeHttpObject() {
-  try {
-    return new XMLHttpRequest();
-  } catch (error) {}
-  try {
-    return new ActiveXObject("Msxml2.XMLHTTP");
-  } catch (error) {}
-  try {
-    return new ActiveXObject("Microsoft.XMLHTTP");
-  } catch (error) {}
-
-  throw new Error("Could not create HTTP request object.");
-}
-
-var request = makeHttpObject();
-request.open(
-  "GET",
-  "https://www.delftstack.com/howto/javascript/javascript-get-html-from-url/",
-  true
-);
-request.send(null);
-request.onreadystatechange = function () {
-  if (request.readyState == 4) console.log(request.responseText);
-};
+// poiskButt.addEventListener(
+//   "click",
+//   () => {
+//     let http = new XMLHttpRequest();
+//     http.open("GET", url.value);
+//     http.onreadystatechange = function () {
+//       if (this.readyState == 2) {
+//         input.disabled = true;
+//       }
+//       if (this.readyState == 4 && this.status == 200) {
+//         content.innerHTML = this.response;
+//         input.disabled = false;
+//         console.log(tess);
+//       }
+//     };
+//     http.send(null);
+//   },
+//   false
+// );

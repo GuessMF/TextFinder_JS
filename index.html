@@ -8,28 +8,34 @@
     <title>Word Finder</title>
   </head>
   <body>
-    <div class="box">
-      <input
-        id="input"
-        type="text"
-        placeholder="Введите  букву"
-        value=""
-        maxlength="1"
-        minlength="1"
-        autofocus
-      />
+    <div id="box" class="box">
+      <div class="topBox">
+        <input class="urlInput" type="text" placeholder="введите " />
+        <button class="poisk">POISK</button>
+      </div>
+      <div class="bottomBox">
+        <input
+          id="input"
+          type="text"
+          placeholder="Введите  букву"
+          value=""
+          maxlength="1"
+          minlength="1"
+          autofocus
+        />
 
-      <input id="found" type="submit" value="Поиск" />
-      <input id="clear" type="submit" value="Отчистить" onclick="newPage()" />
-      <input type="text" placeholder="введите " />
-      <button class="poisk" onclick="makeHttpObject()">POISK</button>
+        <input id="found" type="submit" value="Поиск" />
+        <input id="clear" type="submit" value="Отчистить" onclick="newPage()" />
+      </div>
 
       <a href="https://ru.wikipedia.org/?l="></a>
+
       <p id="cm">Количество изменений: <a id="changeMe"></a></p>
     </div>
 
     <div id="content">
-      <a class="linka" href="https://ru.wikipedia.org/?l=">www</a>
+      <!-- <a class="linka" href="https://ru.wikipedia.org/?l=">www</a> -->
+      <div class="founted"></div>
       <!-- Формула-1 (англ. Formula One, Formula 1) — ааа чемпионат мира по кольцевым
       гонкам, который проводится ежегодно и состоит из этапов (называемых
       Гран-при), ааа в соответствии с техническими нормами, требованиями и
