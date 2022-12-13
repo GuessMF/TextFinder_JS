@@ -28,10 +28,10 @@ function newCheck() {
   stat = true;
   input.value = "";
 }
-// Работает только с Allow CORS: Access-Control-Allow-Origin
+//Без прокси работает только с Allow CORS: Access-Control-Allow-Origin расширение Chrome
 urlSearchButt.addEventListener("click", () => {
   loadStat = false; //Статус загрузки страницы
-  fetch(url.value)
+  fetch("http://cors-anywhere.herokuapp.com/" + url.value) //обход CORS через прокси
     .then((resp) => {
       if (resp.status === 200) {
         loadStat = true; //Придание статусу Тру
@@ -39,9 +39,16 @@ urlSearchButt.addEventListener("click", () => {
       }
     })
     .then((resBody) => {
+      //str = resBody;
       if (loadStat === true) {
-        content.innerHTML = resBody; // Меняет свой текст на загруженный
-        DIV = resBody; // Сохраняем в исходник загруженные текст без измененных букв
+        content.innerHTML = resBody.slice(
+          resBody.indexOf("<body"),
+          resBody.indexOf("</body")
+        ); // Меняет свой текст на загруженный отсекая все кроме body
+        DIV = resBody.slice(
+          resBody.indexOf("<body"),
+          resBody.indexOf("</body")
+        ); // Сохраняем в исходник загруженные текст без измененных букв
       } else {
         alert("Введите корректную ссылку");
       }
