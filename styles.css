@@ -2,17 +2,18 @@ html {
   height: 100%;
 }
 body {
-  padding-top: 5%;
+  padding-top: 0;
   padding-left: 5%;
   padding-right: 5%;
-  background-color: rgba(165, 165, 134, 0.582);
+  background-color: rgba(220, 220, 215, 0.582);
   width: auto;
   min-height: 100%;
   display: grid;
   grid-template-rows: auto 1fr auto;
 }
 #box {
-  background-color: rgba(165, 165, 134, 0.582);
+  background-color: rgba(60, 60, 55, 0.582);
+  border-radius: 10px;
   display: inline-flex;
   padding: 20px;
   flex-direction: column;

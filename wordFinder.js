@@ -1,9 +1,19 @@
+//Подсчет убрал так как на некоторых сайтах есть русские буквы в тегах HTML и функция их тоже считает
+
 let DIV = content.innerHTML;
 stat = false;
 
+url.addEventListener("input", () => {
+  url.value = url.value.replace(/[а-я]/gi, "");
+});
+
+input.addEventListener("input", () => {
+  input.value = input.value.replace(/[a-z]/gi, "");
+});
+
 newPage = () => {
   content.innerHTML = DIV;
-  changeMe.innerHTML = " ";
+  //changeMe.innerHTML = " ";
 };
 found.addEventListener("click", () => {
   newCheck();
@@ -24,7 +34,7 @@ function newCheck() {
       changed.push(mass[n]); // добавление в массив измененных символов
     }
   }
-  changeMe.innerHTML = changed.length;
+  //changeMe.innerHTML = changed.length;
   stat = true;
   input.value = "";
 }
@@ -35,6 +45,7 @@ urlSearchButt.addEventListener("click", () => {
     .then((resp) => {
       if (resp.status === 200) {
         loadStat = true; //Придание статусу Тру
+        console.log(resp.status);
         return resp.text(); // Возвращаем текст страницы
       }
     })
@@ -44,7 +55,11 @@ urlSearchButt.addEventListener("click", () => {
         content.innerHTML = resBody.slice(
           resBody.indexOf("<body"),
           resBody.indexOf("</body")
-        ); // Меняет свой текст на загруженный отсекая все кроме body
+        );
+        console.log(
+          resBody.slice(resBody.indexOf("<body"), resBody.indexOf("</body"))
+        );
+        // Меняет свой текст на загруженный отсекая все кроме body
         DIV = resBody.slice(
           resBody.indexOf("<body"),
           resBody.indexOf("</body")
