@@ -3,9 +3,9 @@
 let DIV = content.innerHTML;
 stat = false;
 
-url.addEventListener("input", () => {
-  url.value = url.value.replace(/[а-я]/gi, "");
-});
+// url.addEventListener("input", () => {
+//   url.value = url.value.replace(/[а-я]/gi, "");
+// });
 
 input.addEventListener("input", () => {
   input.value = input.value.replace(/[a-z]/gi, "");
@@ -56,16 +56,15 @@ urlSearchButt.addEventListener("click", () => {
           resBody.indexOf("<body"),
           resBody.indexOf("</body")
         );
-        console.log(
-          resBody.slice(resBody.indexOf("<body"), resBody.indexOf("</body"))
-        );
         // Меняет свой текст на загруженный отсекая все кроме body
         DIV = resBody.slice(
           resBody.indexOf("<body"),
           resBody.indexOf("</body")
         ); // Сохраняем в исходник загруженные текст без измененных букв
       } else {
-        alert("Введите корректную ссылку");
+        alert(
+          "Введите корректную ссылку или пройдите по ссылке в консоли для отключения CORS"
+        );
       }
     });
 });
