@@ -1,0 +1,22 @@
+{
+  "name": "textfinder_js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "wordFinder.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GuessMF/TextFinder_JS.git"
+  },
+  "author": "Sergey Pankov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GuessMF/TextFinder_JS/issues"
+  },
+  "homepage": "https://github.com/GuessMF/TextFinder_JS#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

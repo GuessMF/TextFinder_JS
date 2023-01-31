@@ -1,5 +1,18 @@
 //Подсчет убрал так как на некоторых сайтах есть русские буквы в тегах HTML и функция их тоже считает
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 let DIV = content.innerHTML;
 stat = false;
 
@@ -41,7 +54,8 @@ function newCheck() {
 //Без прокси работает только с Allow CORS: Access-Control-Allow-Origin расширение Chrome
 urlSearchButt.addEventListener("click", () => {
   loadStat = false; //Статус загрузки страницы
-  fetch("http://cors-anywhere.herokuapp.com/" + url.value) //обход CORS через прокси
+  // fetch("http://cors-anywhere.herokuapp.com/" + url.value) //обход CORS через прокси
+  fetch(url.value)
     .then((resp) => {
       if (resp.status === 200) {
         loadStat = true; //Придание статусу Тру
